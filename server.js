@@ -25,7 +25,7 @@ server.get("/videos", async (request) => {
   return videos;
 });
 
-server.put("/videos/:id", async(request, reply) => {
+server.put("/videos/:id", async (request, reply) => {
   const { title, description, duration } = request.body;
   const videoId = request.params.id;
 
@@ -47,5 +47,6 @@ server.delete("/videos/:id", async (request, reply) => {
 });
 
 server.listen({
+  host: "0.0.0.0",
   port: process.env.PORT ?? 3333,
 });
